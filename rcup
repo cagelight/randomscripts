@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [ "$#" -ne 2 ]; then
+	echo "2 parameters required"
+	exit
+fi
+
+rclone copy -v --stats=5s --low-level-retries 99 --retries 999999 $1 $2;

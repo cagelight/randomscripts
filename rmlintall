@@ -1,0 +1,2 @@
+#!/bin/bash
+rmlint --rank-by=dlpOma && ./rmlint.sh -d && rm rmlint.json

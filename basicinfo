@@ -1,0 +1,5 @@
+#!/bin/bash
+urxvt -e top &
+urxvt -e watch -n1 nvidia-smi &
+urxvt -e watch -n1 df -h &
+urxvt -e sudo i7z &

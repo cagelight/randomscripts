@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ];
+    then echo "goodtwitch takes one required argument and one optional argument: <twitch streamer's name>, <quality>. quality can be one of [audio_only, 160p (worst), 360p, 480p, 720p, 1080p (best)]"
+fi
+if [ "$#" -eq 1 ];
+	then quality="720p";
+else
+	quality="$2";
+fi
+streamlink "http://twitch.tv/$1" "$quality" &
+chromium "--app=http://twitch.tv/$1/chat" &
